@@ -1,0 +1,45 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "theos_header": {
+      "type": "theos-header",
+      "blocks": {
+        "announcement_1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Free express shipping over $75"
+          }
+        },
+        "announcement_2": {
+          "type": "announcement",
+          "settings": {
+            "text": "30-day returns"
+          }
+        },
+        "announcement_3": {
+          "type": "announcement",
+          "settings": {
+            "text": "Built for competitive play"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_1",
+        "announcement_2",
+        "announcement_3"
+      ],
+      "settings": {
+        "brand_word": "THEOS",
+        "brand_subline": "GAMING",
+        "menu": "main-menu",
+        "enable_search": true,
+        "free_shipping_threshold": 75,
+        "mobile_tagline": "PRECISION // WITHOUT COMPROMISE"
+      }
+    }
+  },
+  "order": [
+    "theos_header"
+  ]
+}

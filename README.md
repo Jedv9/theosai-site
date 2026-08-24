@@ -1,10 +1,13 @@
-# Theos Gaming — storefront concept
+# Theos Gaming — Shopify storefront
 
-A premium, dependency-free ecommerce storefront for **Theos Gaming**.
+A premium storefront and upload-ready Shopify Online Store 2.0 theme for
+**Theos Gaming**.
 
 - `index.html` — storefront content and inline product artwork
 - `assets/styles.css` — responsive storefront design
 - `assets/app.js` — cart, search, filtering, navigation, and form interactions
+- `shopify-theme/` — production Shopify theme source
+- `theos-gaming-shopify-theme.zip` — Shopify Admin upload package
 - `product-development/SERIES-01.md` — internal requirements for the first three products
 - `product-development/cost-model.csv` — editable 100% markup cost gates
 - `privacy.html` / `terms.html` — policy templates requiring final legal review
@@ -19,16 +22,28 @@ python3 -m http.server 3000
 
 ## Shopify integration
 
-The current build is a high-fidelity, static storefront prototype. Series 01 is
-presented as an in-development concept range, and the saved setup is persisted
-locally. No orders or preorders are accepted. To launch on Shopify:
+The Shopify build uses native Liquid products, variants, pricing, inventory,
+collections, predictive search, customer newsletter forms, Ajax cart, and
+Shopify checkout.
 
-1. map the page sections into Shopify theme sections;
-2. replace the three concept products with real Shopify products and variant IDs;
-3. connect cart actions to Shopify's Ajax Cart API;
-4. replace the placeholder support email, social links, policies, currency, and
-   fulfillment details with final store information; and
-5. complete legal review before publishing.
+1. In Shopify Admin, go to **Online Store → Themes**.
+2. Choose **Add theme → Upload zip file**.
+3. Upload `theos-gaming-shopify-theme.zip`.
+4. Click **Customize**, then assign:
+   - the hero and featured products;
+   - the three category collections;
+   - the homepage product collection;
+   - navigation menus, logo, social links, and final store copy.
+5. Add final store policies under **Settings → Policies** and test checkout
+   before publishing.
+
+To rebuild the ZIP after editing:
+
+```bash
+cd shopify-theme
+zip -r ../theos-gaming-shopify-theme.zip . \
+  -x "*.DS_Store" -x "__MACOSX/*"
+```
 
 The project can continue to deploy as a static preview through GitHub Pages
 without a build step.

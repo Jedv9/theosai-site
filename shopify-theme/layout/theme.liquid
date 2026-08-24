@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_background }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {%- if page_description -%}
+      <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    <meta property="og:site_name" content="{{ shop.name }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:title" content="{{ page_title | escape }}">
+    <meta property="og:type" content="website">
+    {%- if page_description -%}
+      <meta property="og:description" content="{{ page_description | escape }}">
+    {%- endif -%}
+    {%- if page_image -%}
+      <meta property="og:image" content="http:{{ page_image | image_url: width: 1200 }}">
+    {%- endif -%}
+
+    {%- liquid
+      assign body_font_bold = settings.font_body | font_modify: 'weight', '700'
+      assign heading_font_regular = settings.font_heading
+    -%}
+    <style>
+      {{ settings.font_body | font_face: font_display: 'swap' }}
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ heading_font_regular | font_face: font_display: 'swap' }}
+      :root {
+        --theos-black: {{ settings.color_background }};
+        --theos-raised: {{ settings.color_surface }};
+        --theos-orange: {{ settings.color_accent }};
+        --theos-paper: {{ settings.color_paper }};
+        --theos-white: {{ settings.color_text }};
+        --theos-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
+        --theos-display: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
+        --logo-width: {{ settings.logo_width }}px;
+      }
+    </style>
+
+    {{ 'theos.css' | asset_url | stylesheet_tag }}
+    <script>
+      document.documentElement.classList.remove('no-js');
+      window.TheosTheme = {
+        routes: {
+          root: {{ routes.root_url | json }},
+          cart: {{ routes.cart_url | json }},
+          cartAdd: {{ routes.cart_add_url | json }},
+          cartChange: {{ routes.cart_change_url | json }},
+          search: {{ routes.search_url | json }},
+          predictiveSearch: {{ routes.predictive_search_url | json }}
+        },
+        currency: {{ cart.currency.iso_code | default: shop.currency | json }},
+        locale: {{ request.locale.iso_code | json }}
+      };
+    </script>
+    <script src="{{ 'theos.js' | asset_url }}" defer="defer"></script>
+
+    {{ content_for_header }}
+  </head>
+
+  <body class="template-{{ template.name | handle }}{% if request.design_mode %} shopify-design-mode{% endif %}">
+    <a class="skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+    {% render 'theos-sprite' %}
+
+    {% sections 'header-group' %}
+
+    <main id="MainContent" class="main-content" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% sections 'footer-group' %}
+
+    <div class="theos-toast" role="status" aria-live="polite" aria-atomic="true">
+      <svg viewBox="0 0 68 54" aria-hidden="true"><use href="#theos-mark"></use></svg>
+      <div>
+        <strong>Added to your setup</strong>
+        <span data-toast-product></span>
+      </div>
+    </div>
+  </body>
+</html>

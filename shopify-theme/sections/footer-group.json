@@ -1,0 +1,47 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "theos_footer": {
+      "type": "theos-footer",
+      "blocks": {
+        "shop_menu": {
+          "type": "menu",
+          "settings": {
+            "heading": "Shop",
+            "menu": "footer"
+          }
+        },
+        "explore_menu": {
+          "type": "menu",
+          "settings": {
+            "heading": "Explore"
+          }
+        },
+        "support": {
+          "type": "contact",
+          "settings": {
+            "heading": "Support",
+            "email": "",
+            "text": "Questions about your setup? We are here to help."
+          }
+        }
+      },
+      "block_order": [
+        "shop_menu",
+        "explore_menu",
+        "support"
+      ],
+      "settings": {
+        "brand_word": "THEOS",
+        "brand_subline": "GAMING",
+        "tagline": "PRECISION // WITHOUT COMPROMISE",
+        "social_heading": "Follow the signal",
+        "bottom_line": "Designed for the last millisecond."
+      }
+    }
+  },
+  "order": [
+    "theos_footer"
+  ]
+}

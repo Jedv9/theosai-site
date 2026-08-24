@@ -1,0 +1,36 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "close": "Close",
+      "menu": "Menu"
+    },
+    "search": {
+      "title": "Search",
+      "placeholder": "What are you looking for?",
+      "submit": "Search",
+      "no_results": "No results found"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to setup",
+      "sold_out": "Sold out",
+      "unavailable": "Unavailable",
+      "quantity": "Quantity",
+      "choose_options": "Choose options"
+    }
+  },
+  "cart": {
+    "title": "Your setup",
+    "empty": "Your grid is empty",
+    "subtotal": "Subtotal",
+    "checkout": "Secure checkout",
+    "remove": "Remove",
+    "update": "Update cart"
+  },
+  "newsletter": {
+    "email": "Email address",
+    "success": "You are on the grid."
+  }
+}

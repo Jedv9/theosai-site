@@ -1,0 +1,83 @@
+<section class="collection-page shell">
+  <header class="page-hero">
+    <p class="kicker"><span>Collection</span>{{ collection.products_count }} products</p>
+    <h1>{{ collection.title | escape }}</h1>
+    {%- if collection.description != blank -%}
+      <div class="page-hero__text rte">{{ collection.description }}</div>
+    {%- endif -%}
+  </header>
+
+  <div class="collection-toolbar">
+    <span>{{ collection.products_count }} products</span>
+    <form method="get">
+      <label for="SortBy-{{ section.id }}">Sort by</label>
+      {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+      <select id="SortBy-{{ section.id }}" name="sort_by" onchange="this.form.submit()">
+        {%- for option in collection.sort_options -%}
+          <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected{% endif %}>{{ option.name | escape }}</option>
+        {%- endfor -%}
+      </select>
+    </form>
+  </div>
+
+  {%- paginate collection.products by section.settings.products_per_page -%}
+    <div class="product-grid product-grid--collection">
+      {%- for card_product in collection.products -%}
+        {%- liquid
+          assign product_type_handle = card_product.type | handleize
+          case product_type_handle
+            when 'keyboard', 'keyboards'
+              assign fallback_art = 'keyboard'
+              assign color_style = 'silver'
+            when 'desk', 'desks'
+              assign fallback_art = 'desk'
+              assign color_style = 'cream'
+            else
+              assign fallback_art = 'mouse'
+              assign color_style = 'orange'
+          endcase
+        -%}
+        {% render 'product-card',
+          product_card_product: card_product,
+          fallback_art: fallback_art,
+          color_style: color_style,
+          show_vendor: section.settings.show_vendor,
+          card_index: forloop.index
+        %}
+      {%- else -%}
+        <p class="empty-state">No products are available in this collection yet.</p>
+      {%- endfor -%}
+    </div>
+
+    {%- if paginate.pages > 1 -%}
+      <nav class="pagination" aria-label="Pagination">
+        {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}">← Previous</a>{%- endif -%}
+        <span>Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+        {%- if paginate.next -%}<a href="{{ paginate.next.url }}">Next →</a>{%- endif -%}
+      </nav>
+    {%- endif -%}
+  {%- endpaginate -%}
+</section>
+
+{% schema %}
+{
+  "name": "Main collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 6,
+      "max": 36,
+      "step": 3,
+      "label": "Products per page",
+      "default": 12
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show vendor",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

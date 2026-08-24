@@ -1,0 +1,24 @@
+{
+  "current": {
+    "logo_width": 150,
+    "color_accent": "#ff4e00",
+    "color_background": "#050505",
+    "color_surface": "#141414",
+    "color_paper": "#f2f0e9",
+    "color_text": "#ffffff",
+    "font_body": "assistant_n4",
+    "font_heading": "oswald_n700"
+  },
+  "presets": {
+    "Theos Gaming": {
+      "logo_width": 150,
+      "color_accent": "#ff4e00",
+      "color_background": "#050505",
+      "color_surface": "#141414",
+      "color_paper": "#f2f0e9",
+      "color_text": "#ffffff",
+      "font_body": "assistant_n4",
+      "font_heading": "oswald_n700"
+    }
+  }
+}
