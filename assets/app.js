@@ -196,6 +196,10 @@
 
   function setCartOpen(open) {
     closeSearch(false);
+    if (!open && cartDrawer.contains(document.activeElement)) {
+      document.querySelector(".cart-trigger").focus();
+    }
+    cartDrawer.inert = !open;
     cartDrawer.classList.toggle("is-open", open);
     cartDrawer.setAttribute("aria-hidden", String(!open));
     backdrop.classList.toggle("is-visible", open);
@@ -210,6 +214,10 @@
 
   function setSearchOpen(open) {
     if (open) setCartOpen(false);
+    if (!open && searchDrawer.contains(document.activeElement)) {
+      document.querySelector(".search-trigger").focus();
+    }
+    searchDrawer.inert = !open;
     searchDrawer.classList.toggle("is-open", open);
     searchDrawer.setAttribute("aria-hidden", String(!open));
     backdrop.classList.toggle("is-visible", open);
@@ -222,6 +230,10 @@
   }
 
   function closeSearch(updateBackdrop) {
+    if (searchDrawer.contains(document.activeElement)) {
+      document.querySelector(".search-trigger").focus();
+    }
+    searchDrawer.inert = true;
     searchDrawer.classList.remove("is-open");
     searchDrawer.setAttribute("aria-hidden", "true");
     if (updateBackdrop !== false) {
@@ -231,6 +243,10 @@
   }
 
   function closeAllDrawers() {
+    if (cartDrawer.contains(document.activeElement)) {
+      document.querySelector(".cart-trigger").focus();
+    }
+    cartDrawer.inert = true;
     cartDrawer.classList.remove("is-open");
     cartDrawer.setAttribute("aria-hidden", "true");
     closeSearch(false);
@@ -239,6 +255,9 @@
   }
 
   function setMenuOpen(open) {
+    if (!open && mobileMenu.contains(document.activeElement)) {
+      menuTrigger.focus();
+    }
     mobileMenu.hidden = !open;
     menuTrigger.setAttribute("aria-expanded", String(open));
     menuTrigger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
