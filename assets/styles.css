@@ -916,7 +916,7 @@ p {
   background: #d6d7d4;
 }
 
-.category-card--audio {
+.category-card--desk {
   background: #b7b8b4;
 }
 
@@ -971,12 +971,12 @@ p {
   transform: rotate(-4deg) scale(1.12);
 }
 
-.category-card--audio > svg {
-  top: -10%;
-  left: 27%;
-  width: 71%;
-  height: 94%;
-  transform: rotate(4deg) scale(1.12);
+.category-card--desk > svg {
+  top: 8%;
+  left: -3%;
+  width: 106%;
+  height: 76%;
+  transform: rotate(-2deg) scale(1.08);
 }
 
 .category-card:hover > svg {
@@ -984,7 +984,7 @@ p {
 }
 
 .category-card--keyboard:hover > svg,
-.category-card--audio:hover > svg {
+.category-card--desk:hover > svg {
   transform: rotate(0) scale(1.17) translateY(-6px);
 }
 
@@ -1004,7 +1004,7 @@ p {
 }
 
 .category-card--keyboard .category-card__foot h3,
-.category-card--audio .category-card__foot h3 {
+.category-card--desk .category-card__foot h3 {
   font-size: clamp(36px, 3.7vw, 55px);
 }
 
@@ -1352,8 +1352,8 @@ p {
 }
 
 .product-card:nth-child(3) .product-card__visual > svg {
-  width: 95%;
-  transform: translate(-50%, -48%) scale(0.9);
+  width: 111%;
+  transform: translate(-50%, -48%) scale(0.98);
 }
 
 .product-card:hover .product-card__visual > svg {
@@ -1365,7 +1365,7 @@ p {
 }
 
 .product-card:nth-child(3):hover .product-card__visual > svg {
-  transform: translate(-50%, -51%) scale(0.98);
+  transform: translate(-50%, -51%) scale(1.05);
 }
 
 .product-badge {
@@ -1457,7 +1457,16 @@ p {
   display: grid;
   flex: 0 0 auto;
   justify-items: end;
-  gap: 13px;
+  gap: 4px;
+}
+
+.product-card__price small {
+  color: rgba(255, 255, 255, 0.34);
+  font-family: var(--display);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 
 .product-card__price strong {
@@ -1468,6 +1477,7 @@ p {
 .swatches {
   display: flex;
   gap: 6px;
+  margin-top: 8px;
 }
 
 .swatches i {
@@ -2254,7 +2264,7 @@ p {
   background: #bbbcb9;
 }
 
-.cart-line__visual[data-art="audio"] {
+.cart-line__visual[data-art="desk"] {
   background: #dbd8cf;
 }
 
@@ -3048,7 +3058,7 @@ p {
   }
 
   .category-card--keyboard,
-  .category-card--audio {
+  .category-card--desk {
     min-height: 420px;
   }
 
@@ -3064,15 +3074,15 @@ p {
     width: 96%;
   }
 
-  .category-card--audio > svg {
-    top: -10%;
-    left: 29%;
-    width: 73%;
+  .category-card--desk > svg {
+    top: 8%;
+    left: -4%;
+    width: 108%;
   }
 
   .category-card__foot h3,
   .category-card--keyboard .category-card__foot h3,
-  .category-card--audio .category-card__foot h3 {
+  .category-card--desk .category-card__foot h3 {
     font-size: 48px;
   }
 

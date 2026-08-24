@@ -3,17 +3,21 @@
 
   var products = {
     vx9: { id: "vx9", name: "VX-9 Pro Wireless", price: 129, art: "mouse" },
-    atlas75: { id: "atlas75", name: "Atlas 75 HE", price: 179, art: "keyboard" },
-    sonic1: { id: "sonic1", name: "Sonic-1 Wireless", price: 149, art: "audio" }
+    atlas75: { id: "atlas75", name: "Atlas 75 HE", price: 199, art: "keyboard" },
+    grid1: { id: "grid1", name: "Grid-1 Performance Desk", price: 899, art: "desk" }
   };
 
   var artSymbols = {
     mouse: { symbol: "mouse-product", viewBox: "0 0 640 640" },
     keyboard: { symbol: "keyboard-product", viewBox: "0 0 760 520" },
-    audio: { symbol: "headset-product", viewBox: "0 0 640 640" }
+    desk: { symbol: "desk-product", viewBox: "0 0 760 560" }
   };
 
   var cart = readCart();
+  Object.keys(cart).forEach(function (id) {
+    if (!products[id]) delete cart[id];
+  });
+  saveCart();
   var toastTimer;
   var lastScroll = window.scrollY;
 
@@ -59,10 +63,11 @@
       function (summary, id) {
         if (!products[id] || cart[id] <= 0) return summary;
         summary.count += cart[id];
+        summary.unique += 1;
         summary.subtotal += products[id].price * cart[id];
         return summary;
       },
-      { count: 0, subtotal: 0 }
+      { count: 0, unique: 0, subtotal: 0 }
     );
   }
 
@@ -82,7 +87,7 @@
     var countNodes = document.querySelectorAll(".cart-count");
     var countTextNodes = document.querySelectorAll(".cart-count-text");
     var cartTrigger = document.querySelector(".cart-trigger");
-    var shippingMessage = document.querySelector(".shipping-message");
+    var lineupMessage = document.querySelector(".lineup-message");
     var shippingProgress = document.querySelector(".shipping-meter i");
 
     countNodes.forEach(function (node) {
@@ -94,17 +99,18 @@
     if (cartTrigger) {
       cartTrigger.setAttribute(
         "aria-label",
-        "Open cart, " + summary.count + (summary.count === 1 ? " item" : " items")
+        "Open concept setup, " + summary.count + (summary.count === 1 ? " item" : " items")
       );
     }
 
-    if (summary.subtotal >= 75) {
-      shippingMessage.textContent = "Free express shipping unlocked";
-      shippingProgress.style.width = "100%";
+    if (summary.unique >= 3) {
+      lineupMessage.textContent = "Series 01 concept setup complete";
     } else {
-      shippingMessage.textContent = "Add " + money(75 - summary.subtotal) + " for free express shipping";
-      shippingProgress.style.width = Math.min((summary.subtotal / 75) * 100, 100) + "%";
+      var remaining = 3 - summary.unique;
+      lineupMessage.textContent =
+        "Save " + remaining + " more Series 01 " + (remaining === 1 ? "concept" : "concepts");
     }
+    shippingProgress.style.width = Math.min((summary.unique / 3) * 100, 100) + "%";
 
     if (!summary.count) {
       cartItems.innerHTML = "";
@@ -139,7 +145,7 @@
           '<div class="cart-line__title">' +
           "<p><strong>" +
           product.name +
-          "</strong><span>Performance black / Standard</span></p>" +
+          "</strong><span>Development concept / Target MSRP</span></p>" +
           '<button class="cart-remove" type="button" aria-label="Remove ' +
           product.name +
           '">×</button>' +
@@ -360,7 +366,7 @@
       });
 
     if (!matches.length) {
-      result.textContent = 'No results for "' + query + '". Try mouse, keyboard, or audio.';
+      result.textContent = 'No results for "' + query + '". Try mouse, keyboard, or desk.';
       return;
     }
 
@@ -408,6 +414,7 @@
   });
   document.querySelector(".dialog-continue").addEventListener("click", function () {
     checkoutDialog.close();
+    document.getElementById("newsletter").scrollIntoView({ behavior: "smooth" });
   });
   checkoutDialog.addEventListener("click", function (event) {
     if (event.target === checkoutDialog) checkoutDialog.close();
