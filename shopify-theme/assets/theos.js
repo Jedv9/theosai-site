@@ -33,6 +33,11 @@
     }
   }
 
+  function resizedImage(url, width) {
+    if (!url) return "";
+    return url + (url.indexOf("?") === -1 ? "?" : "&") + "width=" + width;
+  }
+
   function setBackdrop(visible) {
     var backdrop = query("[data-drawer-backdrop]");
     if (backdrop) backdrop.classList.toggle("is-visible", visible);
@@ -128,7 +133,7 @@
 
   function cartItemHtml(item, index) {
     var image = item.image
-      ? '<img src="' + escapeHtml(item.image) + '&width=240" alt="' + escapeHtml(item.product_title) + '" loading="lazy" width="108" height="108">'
+      ? '<img src="' + escapeHtml(resizedImage(item.image, 240)) + '" alt="' + escapeHtml(item.product_title) + '" loading="lazy" width="108" height="108">'
       : "";
     var variant = item.variant_title && item.variant_title !== "Default Title"
       ? "<span>" + escapeHtml(item.variant_title) + "</span>"
@@ -283,7 +288,7 @@
         }
         results.innerHTML = products.map(function (product) {
           var imageUrl = product.featured_image && product.featured_image.url
-            ? product.featured_image.url + "&width=116"
+            ? resizedImage(product.featured_image.url, 116)
             : "";
           var image = imageUrl
             ? '<img src="' + escapeHtml(imageUrl) + '" alt="" width="58" height="58" loading="lazy">'
