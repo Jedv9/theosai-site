@@ -27,6 +27,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -1032,10 +1033,11 @@ p {
 .velocity-band {
   position: relative;
   z-index: 4;
-  width: 105%;
-  margin: -1px -2.5%;
+  width: 100%;
+  margin: -9px 0;
   overflow: hidden;
-  transform: rotate(-1.5deg);
+  padding: 9px 0;
+  clip-path: polygon(0 12%, 100% 0, 100% 88%, 0 100%);
   background: var(--orange);
   color: var(--black);
 }
@@ -3092,8 +3094,8 @@ p {
   }
 
   .velocity-band {
-    width: 110%;
-    margin-left: -5%;
+    width: 100%;
+    margin-inline: 0;
   }
 
   .velocity-band span {
