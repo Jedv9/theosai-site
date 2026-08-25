@@ -10,6 +10,8 @@ A premium storefront and upload-ready Shopify Online Store 2.0 theme for
 - `theos-gaming-shopify-theme.zip` — Shopify Admin upload package
 - `product-development/SERIES-01.md` — internal requirements for the first three products
 - `product-development/cost-model.csv` — editable 100% markup cost gates
+- `product-development/atlas-75-founder/` — sub-$1,000 supplier brief, RFQ,
+  compliance gate, scorecard, and sample acceptance plan
 - `privacy.html` / `terms.html` — policy templates requiring final legal review
 - `favicon.svg` — Theos performance mark
 
