@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "shipping": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Shipping & returns",
+            "content": "<p>Add your final shipping and returns information in the theme editor.</p>"
+          }
+        },
+        "warranty": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Warranty",
+            "content": "<p>Add the supplier-backed warranty terms for this product.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "shipping",
+        "warranty"
+      ],
+      "settings": {
+        "sticky_info": true,
+        "show_dynamic_checkout": true,
+        "show_tax_notice": true,
+        "trust_text": "Secure Shopify checkout · Tracked US delivery"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "heading": "THE PERFORMANCE COLLECTION.",
+        "text": "Hardware selected to keep up with instinct."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,17 @@
+{%- liquid
+  assign art_name = art | default: 'mouse'
+  case art_name
+    when 'keyboard'
+      assign symbol_id = 'keyboard-product'
+      assign art_viewbox = '0 0 760 520'
+    when 'desk'
+      assign symbol_id = 'desk-product'
+      assign art_viewbox = '0 0 760 560'
+    else
+      assign symbol_id = 'mouse-product'
+      assign art_viewbox = '0 0 640 640'
+  endcase
+-%}
+<svg class="product-art product-art--{{ art_name }}" viewBox="{{ art_viewbox }}" aria-hidden="true" focusable="false">
+  <use href="#{{ symbol_id }}"></use>
+</svg>
