@@ -1,0 +1,17 @@
+{
+  "name": "Theos Gaming storefront",
+  "install": "python3 --version && test -f index.html && echo 'Theos storefront checkout verified'",
+  "terminals": [
+    {
+      "name": "storefront",
+      "command": "python3 -m http.server 3000",
+      "description": "Serves the static Theos storefront at http://localhost:3000"
+    }
+  ],
+  "ports": [
+    {
+      "name": "storefront",
+      "port": 3000
+    }
+  ]
+}
