@@ -9,10 +9,6 @@
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
     {%- endif -%}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif -%}
@@ -35,14 +31,15 @@
       <meta property="og:image" content="http:{{ page_image | image_url: width: 1200 }}">
     {%- endif -%}
 
-    {%- liquid
-      assign body_font_bold = settings.font_body | font_modify: 'weight', '700'
-      assign heading_font_regular = settings.font_heading
-    -%}
     <style>
-      {{ settings.font_body | font_face: font_display: 'swap' }}
-      {{ body_font_bold | font_face: font_display: 'swap' }}
-      {{ heading_font_regular | font_face: font_display: 'swap' }}
+      @font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 700; font-display: swap; src: url("{{ 'manrope-400-700.woff2' | asset_url }}") format("woff2"); }
+      @font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 500; font-display: swap; src: url("{{ 'barlow-condensed-500.woff2' | asset_url }}") format("woff2"); }
+      @font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 600; font-display: swap; src: url("{{ 'barlow-condensed-600.woff2' | asset_url }}") format("woff2"); }
+      @font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 700; font-display: swap; src: url("{{ 'barlow-condensed-700.woff2' | asset_url }}") format("woff2"); }
+      @font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 800; font-display: swap; src: url("{{ 'barlow-condensed-800.woff2' | asset_url }}") format("woff2"); }
+      @font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 900; font-display: swap; src: url("{{ 'barlow-condensed-900.woff2' | asset_url }}") format("woff2"); }
+      @font-face { font-family: "Barlow Condensed"; font-style: italic; font-weight: 700; font-display: swap; src: url("{{ 'barlow-condensed-700-italic.woff2' | asset_url }}") format("woff2"); }
+      @font-face { font-family: "Barlow Condensed"; font-style: italic; font-weight: 800; font-display: swap; src: url("{{ 'barlow-condensed-800-italic.woff2' | asset_url }}") format("woff2"); }
       :root {
         --theos-black: {{ settings.color_background | default: '#050505' }};
         --theos-raised: {{ settings.color_surface | default: '#141414' }};
