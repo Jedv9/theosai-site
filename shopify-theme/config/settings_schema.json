@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Theos Gaming",
-    "theme_version": "1.2.0",
+    "theme_version": "1.2.1",
     "theme_author": "Theos Gaming",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://help.shopify.com"
@@ -72,9 +72,9 @@
     "settings": [
       {
         "type": "checkbox",
-        "id": "concept_mode",
-        "label": "Concept mode — hide prices and checkout",
-        "default": true
+        "id": "enable_commerce",
+        "label": "Enable prices, cart, and checkout",
+        "default": false
       },
       {
         "type": "text",

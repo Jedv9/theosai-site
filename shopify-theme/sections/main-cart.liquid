@@ -4,22 +4,23 @@
     <h1>{{ 'cart.title' | t }}</h1>
   </header>
 
-  {%- if settings.concept_mode -%}
+  {%- unless settings.enable_commerce -%}
     <div class="cart-page__empty">
       <span>01</span>
       <h2>{{ settings.concept_label | escape }}</h2>
       <p>Series 01 is not available to order yet. Join the launch grid for development updates.</p>
       <a class="button button--orange" href="{{ routes.root_url }}#newsletter">{{ settings.concept_cta | escape }}</a>
     </div>
-  {%- elsif cart.empty? -%}
-    <div class="cart-page__empty">
+  {%- else -%}
+    {%- if cart.empty? -%}
+      <div class="cart-page__empty">
       <span>00</span>
       <h2>{{ 'cart.empty' | t }}</h2>
       <p>Start with the hardware engineered to keep up.</p>
       <a class="button button--orange" href="{{ routes.all_products_collection_url }}">Shop all products</a>
-    </div>
-  {%- else -%}
-    <form action="{{ routes.cart_url }}" method="post" class="cart-page__form">
+      </div>
+    {%- else -%}
+      <form action="{{ routes.cart_url }}" method="post" class="cart-page__form">
       <div class="cart-page__items">
         {%- for item in cart.items -%}
           <article class="cart-page__line">
@@ -68,8 +69,9 @@
         <button class="button button--ghost" type="submit" name="update">{{ 'cart.update' | t }}</button>
         <button class="button button--orange" type="submit" name="checkout">{{ 'cart.checkout' | t }} <svg><use href="#icon-arrow"></use></svg></button>
       </aside>
-    </form>
-  {%- endif -%}
+      </form>
+    {%- endif -%}
+  {%- endunless -%}
 </section>
 
 {% schema %}

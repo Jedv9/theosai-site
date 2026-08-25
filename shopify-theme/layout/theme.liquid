@@ -66,7 +66,7 @@
         },
         currency: {{ cart.currency.iso_code | default: shop.currency | json }},
         locale: {{ request.locale.iso_code | json }},
-        conceptMode: {{ settings.concept_mode | json }}
+        conceptMode: {% if settings.enable_commerce %}false{% else %}true{% endif %}
       };
     </script>
     <script src="{{ 'theos.js' | asset_url }}" defer="defer"></script>
@@ -74,7 +74,7 @@
     {{ content_for_header }}
   </head>
 
-  <body class="template-{{ template.name | handle }}{% if settings.concept_mode %} concept-mode{% endif %}{% if request.design_mode %} shopify-design-mode{% endif %}">
+  <body class="template-{{ template.name | handle }}{% unless settings.enable_commerce %} concept-mode{% endunless %}{% if request.design_mode %} shopify-design-mode{% endif %}">
     <a class="skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
     {% render 'theos-sprite' %}
 

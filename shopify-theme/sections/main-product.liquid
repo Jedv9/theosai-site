@@ -35,24 +35,24 @@
     <h1>{{ product.title | escape }}</h1>
 
     <div class="product-price" data-product-price>
-      {%- if settings.concept_mode -%}
-        <strong class="concept-status">{{ settings.concept_label | escape }}</strong>
-      {%- else -%}
+      {%- if settings.enable_commerce -%}
         <strong>{{ product.selected_or_first_available_variant.price | money }}</strong>
         {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
           <s>{{ product.selected_or_first_available_variant.compare_at_price | money }}</s>
         {%- endif -%}
+      {%- else -%}
+        <strong class="concept-status">{{ settings.concept_label | escape }}</strong>
       {%- endif -%}
     </div>
 
-    {%- if section.settings.show_tax_notice and settings.concept_mode == false -%}
+    {%- if section.settings.show_tax_notice and settings.enable_commerce -%}
       <p class="product-tax-note">
         {%- if cart.taxes_included -%}Tax included.{%- endif -%}
         Shipping calculated at checkout.
       </p>
     {%- endif -%}
 
-    {%- if settings.concept_mode -%}
+    {%- unless settings.enable_commerce -%}
       <div class="concept-product-cta">
         <p>Series 01 is still in development. Join the grid for prototype updates and launch availability.</p>
         <a class="button button--orange" href="{{ routes.root_url }}#newsletter">{{ settings.concept_cta | escape }} <svg><use href="#icon-arrow"></use></svg></a>
@@ -111,9 +111,9 @@
         <div class="dynamic-checkout">{{ form | payment_button }}</div>
       {%- endif -%}
       {%- endform -%}
-    {%- endif -%}
+    {%- endunless -%}
 
-    {%- if section.settings.trust_text != blank and settings.concept_mode == false -%}
+    {%- if section.settings.trust_text != blank and settings.enable_commerce -%}
       <div class="product-trust"><svg><use href="#icon-check"></use></svg><span>{{ section.settings.trust_text | escape }}</span></div>
     {%- endif -%}
 

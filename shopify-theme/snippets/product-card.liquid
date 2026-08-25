@@ -3,10 +3,12 @@
   assign card_variant = card_product.selected_or_first_available_variant
   assign card_art = fallback_art | default: 'mouse'
   assign card_badge = card_product.metafields.custom.badge.value
-  if settings.concept_mode
+  if settings.enable_commerce
+    if card_badge == blank and card_product.compare_at_price > card_product.price
+      assign card_badge = 'Sale'
+    endif
+  else
     assign card_badge = settings.concept_label
-  elsif card_badge == blank and card_product.compare_at_price > card_product.price
-    assign card_badge = 'Sale'
   endif
 -%}
 
@@ -24,25 +26,27 @@
       <span class="product-badge">Sold out</span>
     {%- endif -%}
 
-    {%- if settings.concept_mode -%}
-      <a class="quick-add" href="{{ card_product.url }}" aria-label="View {{ card_product.title | escape }}">
-        <svg><use href="#icon-arrow"></use></svg>
-      </a>
-    {%- elsif card_product.has_only_default_variant and card_product.available -%}
-      <form
-        method="post"
-        action="{{ routes.cart_add_url }}"
-        class="quick-add-form js-product-form"
-        data-product-title="{{ card_product.title | escape }}"
-      >
-        <input type="hidden" name="id" value="{{ card_variant.id }}">
-        <input type="hidden" name="quantity" value="1">
-        <button class="quick-add" type="submit" data-ajax-add aria-label="Add {{ card_product.title | escape }} to cart">
-          <svg><use href="#icon-plus"></use></svg>
-        </button>
-      </form>
+    {%- if settings.enable_commerce -%}
+      {%- if card_product.has_only_default_variant and card_product.available -%}
+        <form
+          method="post"
+          action="{{ routes.cart_add_url }}"
+          class="quick-add-form js-product-form"
+          data-product-title="{{ card_product.title | escape }}"
+        >
+          <input type="hidden" name="id" value="{{ card_variant.id }}">
+          <input type="hidden" name="quantity" value="1">
+          <button class="quick-add" type="submit" data-ajax-add aria-label="Add {{ card_product.title | escape }} to cart">
+            <svg><use href="#icon-plus"></use></svg>
+          </button>
+        </form>
+      {%- else -%}
+        <a class="quick-add" href="{{ card_product.url }}" aria-label="Choose options for {{ card_product.title | escape }}">
+          <svg><use href="#icon-arrow"></use></svg>
+        </a>
+      {%- endif -%}
     {%- else -%}
-      <a class="quick-add" href="{{ card_product.url }}" aria-label="Choose options for {{ card_product.title | escape }}">
+      <a class="quick-add" href="{{ card_product.url }}" aria-label="View {{ card_product.title | escape }}">
         <svg><use href="#icon-arrow"></use></svg>
       </a>
     {%- endif -%}
@@ -94,15 +98,15 @@
       {%- endif -%}
     </div>
     <div class="product-card__price">
-      {%- if settings.concept_mode -%}
-        <small>Series 01</small>
-        <strong class="concept-status">{{ settings.concept_label | escape }}</strong>
-      {%- else -%}
+      {%- if settings.enable_commerce -%}
         {%- if card_product.price_varies -%}<small>From</small>{%- endif -%}
         <strong>{{ card_product.price | money }}</strong>
         {%- if card_product.compare_at_price > card_product.price -%}
           <s>{{ card_product.compare_at_price | money }}</s>
         {%- endif -%}
+      {%- else -%}
+        <small>Series 01</small>
+        <strong class="concept-status">{{ settings.concept_label | escape }}</strong>
       {%- endif -%}
     </div>
   </div>

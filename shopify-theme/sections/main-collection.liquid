@@ -16,11 +16,11 @@
         {%- for option in collection.sort_options -%}
           {%- liquid
             assign hide_sort_option = false
-            if settings.concept_mode
+            unless settings.enable_commerce
               if option.value == 'price-ascending' or option.value == 'price-descending'
                 assign hide_sort_option = true
               endif
-            endif
+            endunless
           -%}
           {%- unless hide_sort_option -%}
             <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected{% endif %}>{{ option.name | escape }}</option>
