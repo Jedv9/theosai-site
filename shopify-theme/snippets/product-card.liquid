@@ -8,7 +8,7 @@
       assign card_badge = 'Sale'
     endif
   else
-    assign card_badge = settings.concept_label
+    assign card_badge = settings.concept_label | default: 'IN DEVELOPMENT'
   endif
 -%}
 
@@ -106,7 +106,7 @@
         {%- endif -%}
       {%- else -%}
         <small>Series 01</small>
-        <strong class="concept-status">{{ settings.concept_label | escape }}</strong>
+        <strong class="concept-status">{{ settings.concept_label | default: 'IN DEVELOPMENT' | escape }}</strong>
       {%- endif -%}
     </div>
   </div>

@@ -7,9 +7,9 @@
   {%- unless settings.enable_commerce -%}
     <div class="cart-page__empty">
       <span>01</span>
-      <h2>{{ settings.concept_label | escape }}</h2>
+      <h2>{{ settings.concept_label | default: 'IN DEVELOPMENT' | escape }}</h2>
       <p>Series 01 is not available to order yet. Join the launch grid for development updates.</p>
-      <a class="button button--orange" href="{{ routes.root_url }}#newsletter">{{ settings.concept_cta | escape }}</a>
+      <a class="button button--orange" href="{{ routes.root_url }}#newsletter">{{ settings.concept_cta | default: 'JOIN THE LAUNCH GRID' | escape }}</a>
     </div>
   {%- else -%}
     {%- if cart.empty? -%}

@@ -41,7 +41,7 @@
           <s>{{ product.selected_or_first_available_variant.compare_at_price | money }}</s>
         {%- endif -%}
       {%- else -%}
-        <strong class="concept-status">{{ settings.concept_label | escape }}</strong>
+        <strong class="concept-status">{{ settings.concept_label | default: 'IN DEVELOPMENT' | escape }}</strong>
       {%- endif -%}
     </div>
 
@@ -55,7 +55,7 @@
     {%- unless settings.enable_commerce -%}
       <div class="concept-product-cta">
         <p>Series 01 is still in development. Join the grid for prototype updates and launch availability.</p>
-        <a class="button button--orange" href="{{ routes.root_url }}#newsletter">{{ settings.concept_cta | escape }} <svg><use href="#icon-arrow"></use></svg></a>
+        <a class="button button--orange" href="{{ routes.root_url }}#newsletter">{{ settings.concept_cta | default: 'JOIN THE LAUNCH GRID' | escape }} <svg><use href="#icon-arrow"></use></svg></a>
       </div>
     {%- else -%}
       {%- form 'product', product, class: 'product-form js-product-form', data-product-title: product.title -%}
