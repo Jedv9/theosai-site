@@ -56,13 +56,16 @@
     </a>
 
     <nav class="main-nav" aria-label="Primary navigation">
-      {%- for link in section.settings.menu.links -%}
-        <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+      {%- if section.settings.use_shopify_menu and section.settings.menu.links.size > 0 -%}
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+        {%- endfor -%}
       {%- else -%}
-        <a href="{{ routes.all_products_collection_url }}">Shop all</a>
-        <a href="{{ routes.collections_url }}">Collections</a>
-        <a href="{{ routes.search_url }}">Search</a>
-      {%- endfor -%}
+        <a href="{{ routes.root_url }}#shop">Series 01</a>
+        <a href="{{ routes.root_url }}#vx9">VX Series</a>
+        <a href="{{ routes.root_url }}#engineering">Technology</a>
+        <a href="{{ routes.root_url }}#manifesto">Our standard</a>
+      {%- endif -%}
     </nav>
 
     <div class="header__actions">
@@ -71,11 +74,9 @@
           <svg><use href="#icon-search"></use></svg>
         </button>
       {%- endif -%}
-      {%- if shop.customer_accounts_enabled -%}
-        <a class="icon-button account-link" href="{{ routes.account_url }}" aria-label="Account">
-          <svg><use href="#icon-user"></use></svg>
-        </a>
-      {%- endif -%}
+      <a class="icon-button account-link" href="{% if shop.customer_accounts_enabled %}{{ routes.account_url }}{% else %}{{ routes.root_url }}#newsletter{% endif %}" aria-label="Account">
+        <svg><use href="#icon-user"></use></svg>
+      </a>
       <button
         class="icon-button cart-trigger"
         type="button"
@@ -90,13 +91,16 @@
   </div>
 
   <nav class="mobile-menu" id="TheosMobileMenu-{{ section.id }}" aria-label="Mobile navigation" hidden data-mobile-menu>
-    {%- for link in section.settings.menu.links -%}
-      <a href="{{ link.url }}"><span>{{ forloop.index | prepend: '0' }}</span>{{ link.title | escape }}</a>
+    {%- if section.settings.use_shopify_menu and section.settings.menu.links.size > 0 -%}
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}"><span>{{ forloop.index | prepend: '0' }}</span>{{ link.title | escape }}</a>
+      {%- endfor -%}
     {%- else -%}
-      <a href="{{ routes.all_products_collection_url }}"><span>01</span>Shop all</a>
-      <a href="{{ routes.collections_url }}"><span>02</span>Collections</a>
-      <a href="{{ routes.search_url }}"><span>03</span>Search</a>
-    {%- endfor -%}
+      <a href="{{ routes.root_url }}#shop"><span>01</span>Series 01</a>
+      <a href="{{ routes.root_url }}#vx9"><span>02</span>VX Series</a>
+      <a href="{{ routes.root_url }}#engineering"><span>03</span>Technology</a>
+      <a href="{{ routes.root_url }}#manifesto"><span>04</span>Our standard</a>
+    {%- endif -%}
     <p>{{ section.settings.mobile_tagline | escape }}</p>
   </nav>
 </header>
@@ -240,6 +244,12 @@
     },
     {
       "type": "checkbox",
+      "id": "use_shopify_menu",
+      "label": "Use selected Shopify menu",
+      "default": false
+    },
+    {
+      "type": "checkbox",
       "id": "enable_search",
       "label": "Enable predictive search",
       "default": true
@@ -270,7 +280,7 @@
           "type": "text",
           "id": "text",
           "label": "Text",
-          "default": "Free express shipping over $75"
+          "default": "Series 01 now in development"
         }
       ]
     }
@@ -280,9 +290,9 @@
     {
       "name": "Theos header",
       "blocks": [
-        { "type": "announcement", "settings": { "text": "Free express shipping over $75" } },
-        { "type": "announcement", "settings": { "text": "30-day returns" } },
-        { "type": "announcement", "settings": { "text": "Built for competitive play" } }
+        { "type": "announcement", "settings": { "text": "Series 01 now in development" } },
+        { "type": "announcement", "settings": { "text": "Engineered from first principles" } },
+        { "type": "announcement", "settings": { "text": "Join the launch grid" } }
       ]
     }
   ]

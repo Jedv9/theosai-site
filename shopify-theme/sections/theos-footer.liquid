@@ -20,35 +20,56 @@
   </div>
 
   <div class="footer__grid shell">
-    {%- for block in section.blocks -%}
-      <div {{ block.shopify_attributes }}>
-        <h3>{{ block.settings.heading | escape }}</h3>
-        {%- case block.type -%}
-          {%- when 'menu' -%}
-            {%- for link in block.settings.menu.links -%}
-              <a href="{{ link.url }}">{{ link.title | escape }}</a>
-            {%- endfor -%}
-          {%- when 'contact' -%}
-            {%- if block.settings.email != blank -%}
-              <a href="mailto:{{ block.settings.email | escape }}">{{ block.settings.email | escape }}</a>
-            {%- endif -%}
-            {%- if block.settings.text != blank -%}
-              <p>{{ block.settings.text | escape | newline_to_br }}</p>
-            {%- endif -%}
-        {%- endcase -%}
+    {%- if section.settings.use_shopify_menus -%}
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>
+          <h3>{{ block.settings.heading | escape }}</h3>
+          {%- case block.type -%}
+            {%- when 'menu' -%}
+              {%- for link in block.settings.menu.links -%}
+                <a href="{{ link.url }}">{{ link.title | escape }}</a>
+              {%- endfor -%}
+            {%- when 'contact' -%}
+              {%- if block.settings.email != blank -%}
+                <a href="mailto:{{ block.settings.email | escape }}">{{ block.settings.email | escape }}</a>
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <p>{{ block.settings.text | escape | newline_to_br }}</p>
+              {%- endif -%}
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    {%- else -%}
+      <div>
+        <h3>Series 01</h3>
+        <a href="{{ routes.root_url }}#products">Mice</a>
+        <a href="{{ routes.root_url }}#products">Keyboards</a>
+        <a href="{{ routes.root_url }}#products">Desks</a>
+        <a href="{{ routes.root_url }}#vx9">Development concepts</a>
       </div>
-    {%- endfor -%}
+      <div>
+        <h3>Explore</h3>
+        <a href="{{ routes.root_url }}#engineering">Technology</a>
+        <a href="{{ routes.root_url }}#manifesto">Our standard</a>
+        <a href="{{ routes.root_url }}#newsletter">Theos signal</a>
+        <a href="{{ routes.root_url }}#top">Setup gallery</a>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <a href="mailto:{{ section.settings.support_email | default: 'support@theosgaming.com' }}">Contact</a>
+        <a href="{{ shop.shipping_policy.url | default: routes.root_url }}">Shipping &amp; returns</a>
+        <a href="{{ shop.refund_policy.url | default: routes.root_url }}">Warranty</a>
+        <a href="{{ routes.root_url }}">Downloads</a>
+      </div>
+    {%- endif -%}
 
     <div class="footer__social">
       <h3>{{ section.settings.social_heading | escape }}</h3>
       <div>
-        {%- if settings.social_instagram != blank -%}<a href="{{ settings.social_instagram }}" target="_blank" rel="noopener" aria-label="Instagram">IG</a>{%- endif -%}
-        {%- if settings.social_tiktok != blank -%}<a href="{{ settings.social_tiktok }}" target="_blank" rel="noopener" aria-label="TikTok">TK</a>{%- endif -%}
-        {%- if settings.social_youtube != blank -%}<a href="{{ settings.social_youtube }}" target="_blank" rel="noopener" aria-label="YouTube">YT</a>{%- endif -%}
-        {%- if settings.social_discord != blank -%}<a href="{{ settings.social_discord }}" target="_blank" rel="noopener" aria-label="Discord">DC</a>{%- endif -%}
-        {%- if settings.social_instagram == blank and settings.social_tiktok == blank and settings.social_youtube == blank and settings.social_discord == blank -%}
-          <span class="footer__social-empty">Add social links in theme settings</span>
-        {%- endif -%}
+        <a href="{{ settings.social_instagram | default: routes.root_url }}" {% if settings.social_instagram != blank %}target="_blank" rel="noopener"{% endif %} aria-label="Instagram">IG</a>
+        <a href="{{ settings.social_tiktok | default: routes.root_url }}" {% if settings.social_tiktok != blank %}target="_blank" rel="noopener"{% endif %} aria-label="TikTok">TK</a>
+        <a href="{{ settings.social_youtube | default: routes.root_url }}" {% if settings.social_youtube != blank %}target="_blank" rel="noopener"{% endif %} aria-label="YouTube">YT</a>
+        <a href="{{ settings.social_discord | default: routes.root_url }}" {% if settings.social_discord != blank %}target="_blank" rel="noopener"{% endif %} aria-label="Discord">DC</a>
       </div>
     </div>
   </div>
@@ -125,6 +146,18 @@
       "id": "bottom_line",
       "label": "Footer bottom line",
       "default": "Designed for the last millisecond."
+    },
+    {
+      "type": "checkbox",
+      "id": "use_shopify_menus",
+      "label": "Use menu blocks instead of Theos links",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "support_email",
+      "label": "Support email",
+      "default": "support@theosgaming.com"
     }
   ],
   "blocks": [

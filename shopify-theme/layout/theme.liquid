@@ -9,6 +9,9 @@
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
     {%- endif -%}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <title>
       {{ page_title }}
@@ -41,13 +44,13 @@
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ heading_font_regular | font_face: font_display: 'swap' }}
       :root {
-        --theos-black: {{ settings.color_background }};
-        --theos-raised: {{ settings.color_surface }};
-        --theos-orange: {{ settings.color_accent }};
-        --theos-paper: {{ settings.color_paper }};
-        --theos-white: {{ settings.color_text }};
-        --theos-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
-        --theos-display: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
+        --theos-black: {{ settings.color_background | default: '#050505' }};
+        --theos-raised: {{ settings.color_surface | default: '#141414' }};
+        --theos-orange: {{ settings.color_accent | default: '#ff4e00' }};
+        --theos-paper: {{ settings.color_paper | default: '#f2f0e9' }};
+        --theos-white: {{ settings.color_text | default: '#ffffff' }};
+        --theos-body: "Manrope", system-ui, sans-serif;
+        --theos-display: "Barlow Condensed", "Arial Narrow", sans-serif;
         --logo-width: {{ settings.logo_width }}px;
       }
     </style>

@@ -37,7 +37,9 @@
         "brand_subline": "GAMING",
         "tagline": "PRECISION // WITHOUT COMPROMISE",
         "social_heading": "Follow the signal",
-        "bottom_line": "Designed for the last millisecond."
+        "bottom_line": "Designed for the last millisecond.",
+        "use_shopify_menus": false,
+        "support_email": "support@theosgaming.com"
       }
     }
   },

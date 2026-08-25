@@ -8,19 +8,19 @@
         "announcement_1": {
           "type": "announcement",
           "settings": {
-            "text": "Free express shipping over $75"
+            "text": "Series 01 now in development"
           }
         },
         "announcement_2": {
           "type": "announcement",
           "settings": {
-            "text": "30-day returns"
+            "text": "Engineered from first principles"
           }
         },
         "announcement_3": {
           "type": "announcement",
           "settings": {
-            "text": "Built for competitive play"
+            "text": "Join the launch grid"
           }
         }
       },
@@ -33,6 +33,7 @@
         "brand_word": "THEOS",
         "brand_subline": "GAMING",
         "menu": "main-menu",
+        "use_shopify_menu": false,
         "enable_search": true,
         "free_shipping_threshold": 75,
         "mobile_tagline": "PRECISION // WITHOUT COMPROMISE"
