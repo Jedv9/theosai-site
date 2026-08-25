@@ -77,16 +77,18 @@
       <a class="icon-button account-link" href="{% if shop.customer_accounts_enabled %}{{ routes.account_url }}{% else %}{{ routes.root_url }}#newsletter{% endif %}" aria-label="Account">
         <svg><use href="#icon-user"></use></svg>
       </a>
-      <button
-        class="icon-button cart-trigger"
-        type="button"
-        aria-label="Open cart, {{ cart.item_count }} items"
-        aria-controls="TheosCart-{{ section.id }}"
-        data-cart-trigger
-      >
-        <svg><use href="#icon-bag"></use></svg>
-        <span class="cart-count" data-cart-count aria-hidden="true">{{ cart.item_count }}</span>
-      </button>
+      {%- unless settings.concept_mode -%}
+        <button
+          class="icon-button cart-trigger"
+          type="button"
+          aria-label="Open cart, {{ cart.item_count }} items"
+          aria-controls="TheosCart-{{ section.id }}"
+          data-cart-trigger
+        >
+          <svg><use href="#icon-bag"></use></svg>
+          <span class="cart-count" data-cart-count aria-hidden="true">{{ cart.item_count }}</span>
+        </button>
+      {%- endunless -%}
     </div>
   </div>
 
@@ -107,7 +109,8 @@
 
 <div class="drawer-backdrop" data-drawer-backdrop></div>
 
-<aside
+{%- unless settings.concept_mode -%}
+  <aside
   class="cart-drawer"
   id="TheosCart-{{ section.id }}"
   aria-label="{{ 'cart.title' | t }}"
@@ -189,7 +192,8 @@
     </form>
     <a class="cart-view-link" href="{{ routes.cart_url }}">View full cart</a>
   </div>
-</aside>
+  </aside>
+{%- endunless -%}
 
 {%- if section.settings.enable_search -%}
   <section class="search-drawer" aria-label="{{ 'general.search.title' | t }}" aria-hidden="true" data-search-drawer inert>

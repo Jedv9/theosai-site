@@ -14,7 +14,17 @@
       {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
       <select id="SortBy-{{ section.id }}" name="sort_by" onchange="this.form.submit()">
         {%- for option in collection.sort_options -%}
-          <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected{% endif %}>{{ option.name | escape }}</option>
+          {%- liquid
+            assign hide_sort_option = false
+            if settings.concept_mode
+              if option.value == 'price-ascending' or option.value == 'price-descending'
+                assign hide_sort_option = true
+              endif
+            endif
+          -%}
+          {%- unless hide_sort_option -%}
+            <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected{% endif %}>{{ option.name | escape }}</option>
+          {%- endunless -%}
         {%- endfor -%}
       </select>
     </form>

@@ -6,6 +6,9 @@
     "color_surface": "#141414",
     "color_paper": "#f2f0e9",
     "color_text": "#ffffff",
+    "concept_mode": true,
+    "concept_label": "IN DEVELOPMENT",
+    "concept_cta": "JOIN THE LAUNCH GRID",
     "font_body": "assistant_n4",
     "font_heading": "oswald_n700"
   },
@@ -17,6 +20,9 @@
       "color_surface": "#141414",
       "color_paper": "#f2f0e9",
       "color_text": "#ffffff",
+      "concept_mode": true,
+      "concept_label": "IN DEVELOPMENT",
+      "concept_cta": "JOIN THE LAUNCH GRID",
       "font_body": "assistant_n4",
       "font_heading": "oswald_n700"
     }

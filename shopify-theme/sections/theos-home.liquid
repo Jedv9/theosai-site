@@ -177,10 +177,17 @@
     </div>
     <div class="feature__buy">
       <div>
-        <span>{% if feature_product != blank %}{{ feature_product.title | escape }}{% else %}{{ section.settings.feature_product_label | escape }}{% endif %}</span>
-        <strong>{% if feature_product != blank %}{{ feature_product.price | money }}{% else %}{{ section.settings.feature_fallback_price | escape }}{% endif %}</strong>
+        {%- if settings.concept_mode -%}
+          <span>Development status</span>
+          <strong class="concept-status">{{ settings.concept_label | escape }}</strong>
+        {%- else -%}
+          <span>{% if feature_product != blank %}{{ feature_product.title | escape }}{% else %}{{ section.settings.feature_product_label | escape }}{% endif %}</span>
+          <strong>{% if feature_product != blank %}{{ feature_product.price | money }}{% else %}{{ section.settings.feature_fallback_price | escape }}{% endif %}</strong>
+        {%- endif -%}
       </div>
-      {%- if feature_product != blank -%}
+      {%- if settings.concept_mode -%}
+        <a class="button button--orange magnetic" href="#newsletter">{{ settings.concept_cta | escape }} <svg><use href="#icon-arrow"></use></svg></a>
+      {%- elsif feature_product != blank -%}
         {%- if feature_product.has_only_default_variant and feature_product.available -%}
           {%- assign feature_variant = feature_product.selected_or_first_available_variant -%}
           <form method="post" action="{{ routes.cart_add_url }}" class="js-product-form" data-product-title="{{ feature_product.title | escape }}">
@@ -278,7 +285,7 @@
           -%}
           <article class="product-card reveal" data-category="{{ placeholder_art }}">
             <div class="product-card__visual product-card__visual--{{ placeholder_color }}">
-              <span class="product-badge">{{ placeholder_badge }}</span>
+              <span class="product-badge">{% if settings.concept_mode %}{{ settings.concept_label | escape }}{% else %}{{ placeholder_badge }}{% endif %}</span>
               <a class="quick-add" href="#newsletter" aria-label="Join the launch grid for {{ placeholder_title }}">
                 <svg><use href="#icon-plus"></use></svg>
               </a>
@@ -288,8 +295,13 @@
             <div class="product-card__info">
               <div><p>{{ placeholder_vendor }}</p><h3>{{ placeholder_title }}</h3><span>{{ placeholder_text }}</span></div>
               <div class="product-card__price">
-                <small>Target MSRP</small>
-                <strong>{{ placeholder_price }}</strong>
+                {%- if settings.concept_mode -%}
+                  <small>Series 01</small>
+                  <strong class="concept-status">{{ settings.concept_label | escape }}</strong>
+                {%- else -%}
+                  <small>Target MSRP</small>
+                  <strong>{{ placeholder_price }}</strong>
+                {%- endif -%}
                 <span class="swatches" aria-label="Concept colourways">
                   <i class="is-black"></i><i class="{% if placeholder_art == 'keyboard' %}is-white{% else %}is-orange{% endif %}"></i>
                 </span>

@@ -3,7 +3,9 @@
   assign card_variant = card_product.selected_or_first_available_variant
   assign card_art = fallback_art | default: 'mouse'
   assign card_badge = card_product.metafields.custom.badge.value
-  if card_badge == blank and card_product.compare_at_price > card_product.price
+  if settings.concept_mode
+    assign card_badge = settings.concept_label
+  elsif card_badge == blank and card_product.compare_at_price > card_product.price
     assign card_badge = 'Sale'
   endif
 -%}
@@ -22,7 +24,11 @@
       <span class="product-badge">Sold out</span>
     {%- endif -%}
 
-    {%- if card_product.has_only_default_variant and card_product.available -%}
+    {%- if settings.concept_mode -%}
+      <a class="quick-add" href="{{ card_product.url }}" aria-label="View {{ card_product.title | escape }}">
+        <svg><use href="#icon-arrow"></use></svg>
+      </a>
+    {%- elsif card_product.has_only_default_variant and card_product.available -%}
       <form
         method="post"
         action="{{ routes.cart_add_url }}"
@@ -88,10 +94,15 @@
       {%- endif -%}
     </div>
     <div class="product-card__price">
-      {%- if card_product.price_varies -%}<small>From</small>{%- endif -%}
-      <strong>{{ card_product.price | money }}</strong>
-      {%- if card_product.compare_at_price > card_product.price -%}
-        <s>{{ card_product.compare_at_price | money }}</s>
+      {%- if settings.concept_mode -%}
+        <small>Series 01</small>
+        <strong class="concept-status">{{ settings.concept_label | escape }}</strong>
+      {%- else -%}
+        {%- if card_product.price_varies -%}<small>From</small>{%- endif -%}
+        <strong>{{ card_product.price | money }}</strong>
+        {%- if card_product.compare_at_price > card_product.price -%}
+          <s>{{ card_product.compare_at_price | money }}</s>
+        {%- endif -%}
       {%- endif -%}
     </div>
   </div>

@@ -297,7 +297,7 @@
             '<a class="predictive-result" href="' + escapeHtml(product.url) + '">' +
               image +
               '<span><strong>' + escapeHtml(product.title) + "</strong>" +
-              (product.price ? "<span>" + escapeHtml(product.price) + "</span>" : "") +
+              (!config.conceptMode && product.price ? "<span>" + escapeHtml(product.price) + "</span>" : "") +
               "</span>" +
             "</a>"
           );

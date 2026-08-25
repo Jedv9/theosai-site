@@ -2,7 +2,7 @@
   {
     "name": "theme_info",
     "theme_name": "Theos Gaming",
-    "theme_version": "1.1.0",
+    "theme_version": "1.2.0",
     "theme_author": "Theos Gaming",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://help.shopify.com"
@@ -64,6 +64,29 @@
         "id": "color_text",
         "label": "Text",
         "default": "#ffffff"
+      }
+    ]
+  },
+  {
+    "name": "Store mode",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "concept_mode",
+        "label": "Concept mode — hide prices and checkout",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "concept_label",
+        "label": "Concept status label",
+        "default": "IN DEVELOPMENT"
+      },
+      {
+        "type": "text",
+        "id": "concept_cta",
+        "label": "Concept call to action",
+        "default": "JOIN THE LAUNCH GRID"
       }
     ]
   },
