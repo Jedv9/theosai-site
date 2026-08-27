@@ -1,49 +1,24 @@
-# Theos Gaming — Shopify storefront
+# Theos AI — marketing site
 
-A premium storefront and upload-ready Shopify Online Store 2.0 theme for
-**Theos Gaming**.
+Static, dependency-free marketing site for **Theos AI** — production-grade AI implementation
+(custom AI agents, workflow automation, and custom websites).
 
-- `index.html` — storefront content and inline product artwork
-- `assets/styles.css` — responsive storefront design
-- `assets/app.js` — cart, search, filtering, navigation, and form interactions
-- `shopify-theme/` — production Shopify theme source
-- `theos-gaming-shopify-theme.zip` — Shopify Admin upload package
-- `product-development/SERIES-01.md` — internal requirements for the first three products
-- `product-development/cost-model.csv` — editable 100% markup cost gates
-- `privacy.html` / `terms.html` — policy templates requiring final legal review
-- `favicon.svg` — Theos performance mark
+- `index.html` — the entire site (hand-crafted CSS + vanilla JS, no build step)
+- `favicon.svg` — brand mark
 
 ## Preview locally
 
 ```bash
-python3 -m http.server 3000
+python -m http.server 3000
 # → http://localhost:3000
 ```
 
-## Shopify integration
+## Deploy
 
-The Shopify build uses native Liquid products, variants, pricing, inventory,
-collections, predictive search, customer newsletter forms, Ajax cart, and
-Shopify checkout.
+Served via GitHub Pages from the `main` branch root.
 
-1. In Shopify Admin, go to **Online Store → Themes**.
-2. Choose **Add theme → Upload zip file**.
-3. Upload `theos-gaming-shopify-theme.zip`.
-4. Click **Customize**, then assign:
-   - the hero and featured products;
-   - the three category collections;
-   - the homepage product collection;
-   - navigation menus, logo, social links, and final store copy.
-5. Add final store policies under **Settings → Policies** and test checkout
-   before publishing.
+## Booking link
 
-To rebuild the ZIP after editing:
-
-```bash
-cd shopify-theme
-zip -r ../theos-gaming-shopify-theme.zip . \
-  -x "*.DS_Store" -x "__MACOSX/*"
-```
-
-The project can continue to deploy as a static preview through GitHub Pages
-without a build step.
+To point every "Book a call" button at a scheduler, open `index.html`, find
+`var BOOKING_URL = "";` near the bottom, and paste your Calendly/Cal.com URL.
+Until then, the buttons fall back to `mailto:jed@theosai.net`.
