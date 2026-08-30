@@ -5,7 +5,7 @@ Static, dependency-free marketing site for **Theos AI**.
 I help small businesses remove the one repetitive workflow holding the business back.
 
 - `index.html` — the entire site (hand-crafted CSS + vanilla JS, no build step)
-- `favicon.svg` — brand mark
+- `favicon.svg`, `favicon.ico`, `apple-touch-icon.png` — Theos AI hexagon node mark
 
 ## Preview locally
 
