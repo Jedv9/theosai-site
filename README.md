@@ -1,10 +1,11 @@
 # Theos AI — marketing site
 
-Static, dependency-free marketing site for **Theos AI** — production-grade AI implementation
-(custom AI agents, workflow automation, and custom websites).
+Static, dependency-free marketing site for **Theos AI**.
+
+I help small businesses remove the one repetitive workflow holding the business back.
 
 - `index.html` — the entire site (hand-crafted CSS + vanilla JS, no build step)
-- `favicon.svg` — brand mark
+- `favicon.svg`, `favicon.ico`, `apple-touch-icon.png` — Theos AI hexagon node mark
 
 ## Preview locally
 
@@ -19,6 +20,5 @@ Served via GitHub Pages from the `main` branch root.
 
 ## Booking link
 
-To point every "Book a call" button at a scheduler, open `index.html`, find
-`var BOOKING_URL = "";` near the bottom, and paste your Calendly/Cal.com URL.
-Until then, the buttons fall back to `mailto:jed@theosai.net`.
+Book a call buttons point at `https://calendly.com/jed-theosai/30min`.
+The fallback is `mailto:jed@theosai.net`.
