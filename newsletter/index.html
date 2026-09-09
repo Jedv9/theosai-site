@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Newsletter — Top 10 things in AI this week | Theos AI</title>
+  <meta name="description" content="A Monday page from Jed Vanden Bush: the top 10 things in AI this week, ranked for local business owners. Site-only. No signup required." />
+  <meta name="theme-color" content="#070A12" />
+  <link rel="canonical" href="https://theosai.net/newsletter/" />
+  <link rel="alternate" type="application/rss+xml" title="Theos AI Newsletter" href="https://theosai.net/newsletter/rss.xml" />
+  <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
+  <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+
+  <meta property="og:title" content="Newsletter — Top 10 things in AI this week | Theos AI" />
+  <meta property="og:description" content="A Monday page from Jed Vanden Bush: the top 10 things in AI this week, ranked for local business owners. Site-only. No signup required." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://theosai.net/newsletter/" />
+  <meta property="og:site_name" content="Theos AI" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Newsletter — Top 10 things in AI this week | Theos AI" />
+  <meta name="twitter:description" content="A Monday page from Jed Vanden Bush: the top 10 things in AI this week, ranked for local business owners." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+  :root{
+    --bg:        #070A12;
+    --bg-1:      #0B1020;
+    --bg-2:      #0E1526;
+    --elev:      #121a2e;
+    --line:      rgba(150,168,200,.12);
+    --line-2:    rgba(150,168,200,.20);
+    --text:      #EAF0FB;
+    --dim:       #AAB6CC;
+    --muted:     #8794AD;
+    --acc:       #2FE0A2;
+    --acc-600:   #23C58C;
+    --acc-300:   #7CF0C6;
+    --ink:       #04160E;
+    --cyan:      #38C6F4;
+    --violet:    #8B7BF6;
+    --radius:    16px;
+    --radius-lg: 22px;
+    --radius-sm: 11px;
+    --maxw:      1180px;
+    --ease:      cubic-bezier(.22,.61,.36,1);
+    --spring:    cubic-bezier(.34,1.56,.64,1);
+    --shadow-1:  0 1px 0 rgba(255,255,255,.04) inset, 0 8px 24px rgba(0,0,0,.35);
+    --shadow-2:  0 1px 0 rgba(255,255,255,.05) inset, 0 24px 60px rgba(0,0,0,.5);
+    --glow:      0 8px 30px rgba(47,224,162,.28);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+    background:
+      radial-gradient(60% 50% at 78% -8%, rgba(47,224,162,.14), transparent 60%),
+      radial-gradient(48% 42% at 8% 6%, rgba(56,198,244,.12), transparent 62%),
+      radial-gradient(50% 46% at 92% 68%, rgba(139,123,246,.12), transparent 60%),
+      linear-gradient(180deg, #070A12 0%, #080C16 60%, #070A12 100%);
+  }
+  body::after{
+    content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+
+  h1,h2,h3,h4{ font-family:"Space Grotesk", system-ui, sans-serif; color:var(--text); margin:0 0 .55em; font-weight:600; line-height:1.08; letter-spacing:-.02em; }
+  h1{ font-size:clamp(2.2rem, 4.8vw, 3.4rem); font-weight:700; letter-spacing:-.035em; }
+  h2{ font-size:clamp(1.6rem, 3vw, 2.2rem); letter-spacing:-.03em; }
+  p{ margin:0 0 1rem; }
+  a{ color:var(--acc-300); text-decoration:none; transition:color .2s var(--ease); }
+  a:hover{ color:var(--acc); }
+  strong{ color:var(--text); }
+
+  .container{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:24px; }
+  .skip-link{ position:absolute; left:-999px; top:10px; z-index:100; background:var(--acc); color:var(--ink); padding:10px 16px; border-radius:10px; font-weight:600; }
+  .skip-link:focus{ left:14px; }
+  :focus-visible{ outline:none; box-shadow:0 0 0 3px rgba(47,224,162,.5); border-radius:10px; }
+  .grad{ background:linear-gradient(100deg, var(--acc) 0%, var(--cyan) 55%, var(--violet) 120%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.55rem; font-family:"Space Grotesk",sans-serif; font-weight:500; font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; color:var(--acc); margin:0 0 1.1rem; }
+  .eyebrow .dot{ width:6px; height:6px; border-radius:50%; background:var(--acc); box-shadow:0 0 0 4px rgba(47,224,162,.14); }
+
+  .btn{
+    --_bg:transparent; --_fg:var(--text); --_bd:transparent;
+    display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
+    font-family:"Space Grotesk",sans-serif; font-weight:600; font-size:.97rem;
+    padding:.8rem 1.35rem; border-radius:12px; cursor:pointer; white-space:nowrap;
+    background:var(--_bg); color:var(--_fg); border:1px solid var(--_bd);
+    transition:transform .18s var(--spring), box-shadow .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease), color .22s var(--ease);
+  }
+  .btn svg{ width:18px; height:18px; }
+  .btn--primary{ --_bg:var(--acc); --_fg:var(--ink); box-shadow:var(--glow); }
+  .btn--primary:hover{ --_bg:var(--acc-300); color:var(--ink); transform:translateY(-2px); box-shadow:0 12px 36px rgba(47,224,162,.4); }
+  .btn--ghost{ --_bg:rgba(255,255,255,.02); --_bd:var(--line-2); --_fg:var(--text); }
+  .btn--ghost:hover{ --_bd:rgba(47,224,162,.5); color:var(--text); transform:translateY(-2px); background:rgba(47,224,162,.06); }
+  .btn--lg{ padding:.95rem 1.7rem; font-size:1.02rem; border-radius:13px; }
+  .btn--block{ width:100%; }
+
+  .nav{ position:sticky; top:0; z-index:50; background:rgba(8,12,22,.72); backdrop-filter:blur(14px) saturate(140%); border-bottom:1px solid var(--line); }
+  .nav__inner{ display:flex; align-items:center; gap:1.5rem; height:72px; }
+  .brand{ display:inline-flex; align-items:center; gap:.6rem; color:var(--text); font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:1.2rem; letter-spacing:-.02em; }
+  .brand:hover{ color:var(--text); }
+  .brand__mark{ color:var(--acc); filter:drop-shadow(0 0 10px rgba(47,224,162,.35)); }
+  .brand__accent{ color:var(--acc); }
+  .nav__links{ display:flex; gap:1.9rem; margin-left:auto; }
+  .nav__links a{ color:var(--dim); font-weight:500; font-size:.95rem; font-family:"Space Grotesk",sans-serif; position:relative; }
+  .nav__links a::after{ content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:var(--acc); border-radius:2px; transition:width .22s var(--ease); }
+  .nav__links a:hover{ color:var(--text); }
+  .nav__links a:hover::after, .nav__links a[aria-current="page"]::after{ width:100%; }
+  .nav__links a[aria-current="page"]{ color:var(--text); }
+  .nav__actions{ display:flex; gap:.6rem; align-items:center; }
+  .nav__toggle{ display:none; background:none; border:1px solid var(--line-2); border-radius:10px; color:var(--text); cursor:pointer; padding:8px; }
+  .mobile-menu{ display:none; flex-direction:column; gap:.2rem; padding:10px 24px 20px; background:rgba(8,12,22,.96); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+  .mobile-menu a{ padding:.85rem .2rem; color:var(--dim); font-weight:500; font-family:"Space Grotesk",sans-serif; border-bottom:1px solid var(--line); }
+  .mobile-menu a:hover, .mobile-menu a[aria-current="page"]{ color:var(--text); }
+  .mobile-menu .btn{ margin-top:.8rem; border-bottom:none; color:var(--ink); }
+
+  .hero{ padding:clamp(3rem,6vw,5rem) 0 2.4rem; }
+  .hero__copy{ max-width:720px; }
+  .lead{ font-size:clamp(1.06rem,1.5vw,1.2rem); color:var(--dim); }
+  .meta-row{ display:flex; flex-wrap:wrap; gap:.7rem 1.2rem; color:var(--muted); font-size:.92rem; margin:1.4rem 0 0; }
+  .meta-row strong{ color:var(--text); font-weight:600; }
+
+  .section{ padding:clamp(2.2rem,5vw,3.6rem) 0; }
+  .section__head{ display:flex; align-items:end; justify-content:space-between; gap:1rem; margin-bottom:1.6rem; flex-wrap:wrap; }
+  .section__head h2{ margin:0; }
+  .section__sub{ color:var(--muted); font-size:.92rem; margin:0; }
+
+  .featured{
+    display:block; color:inherit;
+    background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    border:1px solid var(--line-2); border-radius:var(--radius-lg);
+    padding:clamp(1.6rem,3vw,2.4rem); box-shadow:var(--shadow-1);
+    transition:transform .28s var(--ease), border-color .28s var(--ease);
+  }
+  .featured:hover{ transform:translateY(-4px); border-color:rgba(47,224,162,.4); color:inherit; }
+  .featured__kicker{ font-family:"Space Grotesk",sans-serif; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); margin:0 0 .7rem; }
+  .featured h2{ font-size:clamp(1.5rem, 2.6vw, 2rem); margin:0 0 .55rem; }
+  .featured p{ color:var(--dim); margin:0 0 1.2rem; max-width:68ch; }
+  .featured__meta{ display:flex; flex-wrap:wrap; gap:.6rem 1.1rem; font-size:.9rem; color:var(--muted); }
+  .featured__cta{ margin-top:1.3rem; display:inline-flex; align-items:center; gap:.45rem; font-family:"Space Grotesk",sans-serif; font-weight:600; color:var(--acc-300); }
+  .featured:hover .featured__cta{ color:var(--acc); }
+
+  .archive{ list-style:none; padding:0; margin:0; display:grid; gap:.9rem; }
+  .archive a{
+    display:grid; grid-template-columns:auto 1fr auto; gap:1rem; align-items:center;
+    padding:1.15rem 1.3rem; border:1px solid var(--line); border-radius:14px;
+    background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.008));
+    color:inherit; transition:border-color .22s var(--ease);
+  }
+  .archive a:hover{ border-color:var(--line-2); color:inherit; }
+  .archive__n{ font-family:"Space Grotesk",sans-serif; font-weight:700; font-size:.82rem; letter-spacing:.06em; color:var(--acc); background:rgba(47,224,162,.1); border:1px solid rgba(47,224,162,.22); padding:.25rem .55rem; border-radius:8px; }
+  .archive h3{ margin:0 0 .2rem; font-size:1.08rem; }
+  .archive p{ margin:0; color:var(--muted); font-size:.9rem; }
+  .archive__date{ color:var(--muted); font-size:.86rem; white-space:nowrap; }
+
+  .note{ color:var(--dim); font-size:1.02rem; max-width:68ch; }
+
+  .cta__wrap{ position:relative; border:1px solid var(--line-2); border-radius:26px; padding:clamp(2.4rem,5vw,3.6rem) 2rem; text-align:center; overflow:hidden; background:linear-gradient(180deg, rgba(18,26,46,.6), rgba(10,15,28,.7)); }
+  .cta__wrap::before{ content:""; position:absolute; inset:0; z-index:0; background:radial-gradient(50% 80% at 50% -10%, rgba(47,224,162,.18), transparent 65%), radial-gradient(40% 60% at 85% 120%, rgba(56,198,244,.14), transparent 60%); }
+  .cta__inner{ position:relative; z-index:1; max-width:680px; margin:0 auto; }
+  .cta__inner h2{ margin-bottom:.7rem; }
+  .cta__inner p{ color:var(--dim); font-size:1.08rem; margin-bottom:1.7rem; }
+  .cta__actions{ display:flex; flex-wrap:wrap; gap:.9rem; justify-content:center; }
+  .cta__fine{ margin:1.4rem 0 0; font-size:.9rem; color:var(--muted); }
+
+  .footer{ border-top:1px solid var(--line); margin-top:2rem; padding:3.2rem 0 2rem; }
+  .footer__inner{ display:grid; grid-template-columns:2fr 1fr 1fr; gap:2rem; padding-bottom:2.2rem; border-bottom:1px solid var(--line); }
+  .footer__brand p{ color:var(--muted); font-size:.92rem; margin-top:.9rem; max-width:34ch; }
+  .footer__col h4{ font-family:"Space Grotesk",sans-serif; font-size:.82rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:600; margin-bottom:1rem; }
+  .footer__col a{ display:block; color:var(--dim); padding:.3rem 0; font-size:.94rem; }
+  .footer__col a:hover{ color:var(--acc); }
+  .footer__bar{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:.6rem; padding-top:1.6rem; font-size:.84rem; color:var(--muted); }
+
+  @media (max-width:940px){
+    .footer__inner{ grid-template-columns:1fr 1fr; }
+    .archive a{ grid-template-columns:auto 1fr; }
+    .archive__date{ grid-column:2; }
+  }
+  @media (max-width:620px){
+    body{ font-size:16px; }
+    .nav__links, .nav__actions{ display:none; }
+    .nav__toggle{ display:block; margin-left:auto; }
+    .mobile-menu{ display:flex; }
+    .mobile-menu[hidden]{ display:none; }
+    .footer__inner{ grid-template-columns:1fr; gap:1.6rem; }
+    .footer__bar{ flex-direction:column; }
+  }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="brand" href="/" aria-label="Theos AI home">
+        <svg class="brand__mark" width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <path d="M16 5 L26 10.5 V21.5 L16 27 L6 21.5 V10.5 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity=".55"/>
+          <circle cx="16" cy="16" r="3" fill="currentColor"/>
+          <path d="M16 5 V12.9 M16 19.1 V27 M6 10.5 L13.3 14.5 M18.7 17.5 L26 21.5 M26 10.5 L18.7 14.5 M13.3 17.5 L6 21.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        <span>Theos<span class="brand__accent"> AI</span></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/#services">Services</a>
+        <a href="/#method">Method</a>
+        <a href="/#about">About</a>
+        <a href="/newsletter/" aria-current="page">Newsletter</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="btn btn--primary js-book" href="mailto:jed@theosai.net?subject=30-minute%20call">Book a 30-Minute Call</a>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a href="/">Home</a>
+      <a href="/#services">Services</a>
+      <a href="/#method">Method</a>
+      <a href="/#about">About</a>
+      <a href="/newsletter/" aria-current="page">Newsletter</a>
+      <a class="btn btn--primary btn--block js-book" href="mailto:jed@theosai.net?subject=30-minute%20call">Book a 30-Minute Call</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__copy">
+        <p class="eyebrow"><span class="dot"></span> Weekly, on the site</p>
+        <h1>The <span class="grad">top 10 things in AI</span> this week</h1>
+        <div class="lead">
+          <p>I'm Jed. Every Monday I write down what actually moved in AI last week — the Nvidia-scale deals, the humanoids, and the quieter stories of how real companies used Claude, Copilot, or ChatGPT to get work done.</p>
+          <p>I rank the list for a local business owner, not an engineer. No inbox signup. Come back when you want it.</p>
+        </div>
+        <p class="meta-row">
+          <span>Written by <strong>Jed Vanden Bush</strong></span>
+          <span>Oconomowoc, Wisconsin</span>
+          <span><a href="/newsletter/rss.xml">RSS feed</a></span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="latest">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="latest">Latest issue</h2>
+          <p class="section__sub">Issue #1 · week of September 8, 2026</p>
+        </div>
+        <a class="featured" href="/newsletter/2026-09-08-top-10-things-in-ai-this-week/">
+          <p class="featured__kicker">Issue #1</p>
+          <h2>Top 10 things in AI this week — for a business that has real work to finish</h2>
+          <p>Astra landed in ChatGPT for work. A UK building society put Copilot on meeting notes. monday.com showed how they keep a production agent in the lane. Humanoids raised Nvidia-scale money. I ranked it by what I'd care about if I ran the shop.</p>
+          <div class="featured__meta">
+            <span>September 8, 2026</span>
+            <span>Jed Vanden Bush</span>
+            <span>10 sourced stories</span>
+          </div>
+          <span class="featured__cta">Read Issue #1 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="archive">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="archive">Archive</h2>
+          <p class="section__sub">Every Monday. Oldest issues stay here.</p>
+        </div>
+        <ol class="archive">
+          <li>
+            <a href="/newsletter/2026-09-08-top-10-things-in-ai-this-week/">
+              <span class="archive__n">#1</span>
+              <span>
+                <h3>Top 10 things in AI this week</h3>
+                <p>Astra, Copilot at Nationwide, Claude logs in your cloud, Gemini 3.8 Flash, and the first humanoid off XPeng's line.</p>
+              </span>
+              <span class="archive__date">Sep 8, 2026</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="note">I write this for people who run a business, not for people who train models. If a story is mostly a press release, it goes lower. If a company used the tools to remove a repetitive job, it goes higher.</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="cta__wrap">
+          <div class="cta__inner">
+            <h2>What's the constraint this week?</h2>
+            <p>If one of these stories sounds like the repetitive work holding you back, we can look at it on a 30-minute call.</p>
+            <div class="cta__actions">
+              <a class="btn btn--primary btn--lg js-book" href="mailto:jed@theosai.net?subject=30-minute%20call">
+                Book a 30-Minute Call
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn--ghost btn--lg" href="mailto:jed@theosai.net">Email jed@theosai.net</a>
+            </div>
+            <p class="cta__fine">No pitch deck. No giant software project. We'll look at what is slowing the business down.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a class="brand" href="/" aria-label="Theos AI home">
+            <svg class="brand__mark" width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M16 5 L26 10.5 V21.5 L16 27 L6 21.5 V10.5 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity=".55"/>
+              <circle cx="16" cy="16" r="3" fill="currentColor"/>
+              <path d="M16 5 V12.9 M16 19.1 V27 M6 10.5 L13.3 14.5 M18.7 17.5 L26 21.5 M26 10.5 L18.7 14.5 M13.3 17.5 L6 21.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            <span>Theos<span class="brand__accent"> AI</span></span>
+          </a>
+          <p>I help small businesses remove the one repetitive workflow holding the business back.</p>
+        </div>
+        <nav class="footer__col" aria-label="Footer navigation">
+          <h4>Company</h4>
+          <a href="/#services">Services</a>
+          <a href="/#method">Method</a>
+          <a href="/#about">About</a>
+          <a href="/newsletter/">Newsletter</a>
+        </nav>
+        <div class="footer__col">
+          <h4>Get in touch</h4>
+          <a href="mailto:jed@theosai.net">jed@theosai.net</a>
+          <a href="https://theosai.net">theosai.net</a>
+          <a href="/newsletter/rss.xml">RSS</a>
+        </div>
+      </div>
+      <div class="footer__bar">
+        <span>&copy; <span id="year">2026</span> Theos AI. All rights reserved.</span>
+        <span><a href="/privacy.html">Privacy Policy</a> &middot; <a href="/terms.html">Terms of Service</a></span>
+        <span>theosai.net</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    "use strict";
+    var BOOKING_URL = "https://calendly.com/jed-theosai/30min";
+    if (BOOKING_URL) {
+      document.querySelectorAll(".js-book").forEach(function(a){
+        a.setAttribute("href", BOOKING_URL);
+        a.setAttribute("target", "_blank");
+        a.setAttribute("rel", "noopener");
+      });
+    }
+    var y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+    var toggle = document.getElementById("navToggle");
+    var menu = document.getElementById("mobileMenu");
+    if (toggle && menu) {
+      var setOpen = function(open){
+        menu.hidden = !open;
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      };
+      toggle.addEventListener("click", function(){ setOpen(menu.hidden); });
+      menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ setOpen(false); }); });
+    }
+  })();
+  </script>
+</body>
+</html>

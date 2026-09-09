@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Theos AI Newsletter</title>
+    <link>https://theosai.net/newsletter/</link>
+    <description>Weekly Monday page from Jed Vanden Bush: the top 10 things in AI this week, ranked for local business owners. Site-only on theosai.net.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Sep 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://theosai.net/newsletter/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Issue #1 — Top 10 things in AI this week (Sep 8, 2026)</title>
+      <link>https://theosai.net/newsletter/2026-09-08-top-10-things-in-ai-this-week/</link>
+      <guid isPermaLink="true">https://theosai.net/newsletter/2026-09-08-top-10-things-in-ai-this-week/</guid>
+      <pubDate>Mon, 08 Sep 2026 12:00:00 GMT</pubDate>
+      <author>jed@theosai.net (Jed Vanden Bush)</author>
+      <description>Astra landed in ChatGPT for work. A UK building society put Copilot on meeting notes. monday.com showed how they keep a production agent in the lane. Humanoids raised Nvidia-scale money. Ranked by what a local business owner should try, watch, or ignore.</description>
+    </item>
+  </channel>
+</rss>
