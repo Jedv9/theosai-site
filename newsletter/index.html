@@ -197,12 +197,14 @@
     .archive a{ grid-template-columns:auto 1fr; }
     .archive__date{ grid-column:2; }
   }
-  @media (max-width:620px){
-    body{ font-size:16px; }
+  @media (max-width:900px){
     .nav__links, .nav__actions{ display:none; }
     .nav__toggle{ display:block; margin-left:auto; }
     .mobile-menu{ display:flex; }
     .mobile-menu[hidden]{ display:none; }
+  }
+  @media (max-width:620px){
+    body{ font-size:16px; }
     .footer__inner{ grid-template-columns:1fr; gap:1.6rem; }
     .footer__bar{ flex-direction:column; }
   }
