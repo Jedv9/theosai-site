@@ -157,8 +157,8 @@
     transition:transform .28s var(--ease), border-color .28s var(--ease);
   }
   .featured:hover{ transform:translateY(-4px); border-color:rgba(47,224,162,.4); color:inherit; }
-  .featured__media{ margin:0 0 1.15rem; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#0B1020; }
-  .featured__media img{ width:100%; height:auto; display:block; }
+  .featured__media{ margin:0 0 1.15rem; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#0B1020; aspect-ratio:16/7; }
+  .featured__media img{ width:100%; height:100%; display:block; object-fit:cover; object-position:18% 50%; }
   .featured__kicker{ font-family:"Space Grotesk",sans-serif; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); margin:0 0 .7rem; }
   .featured h2{ font-size:clamp(1.5rem, 2.6vw, 2rem); margin:0 0 .55rem; }
   .featured p{ color:var(--dim); margin:0 0 1.2rem; max-width:68ch; }
