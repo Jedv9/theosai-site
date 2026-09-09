@@ -1,0 +1,24 @@
+Issue #1 media credits — week of September 8, 2026
+
+Custom illustrations (Theos AI, 2026). Not official press photos.
+- hero-week-of-sep-8.jpg — generated header for this issue (Theos hex node)
+- item-01-astra-desk.jpg — editorial illustration, ChatGPT-for-work desk
+- item-02-copilot-notes.jpg — editorial illustration, meeting notes
+- item-03-harness.svg — branded diagram of an agent harness
+- item-04-cloud-keys.jpg — editorial illustration, customer-held logs
+- item-05-sheets.jpg — editorial illustration, spreadsheet cleanup
+- item-06-outage.jpg — editorial illustration, a down helper
+- item-07-compute.svg — branded compute-rack diagram
+- item-08-humanoid-line.jpg — editorial illustration, humanoid off a line (not an XPeng photo)
+- item-09-sonic.svg — branded language-to-motion diagram
+- item-10-split.svg — branded two-stories diagram
+
+Embedded videos (official channels; youtube-nocookie, lazy-loaded, no autoplay)
+- Microsoft 365: The Microsoft 365 Copilot AI Event in Less than 3 Minutes
+  https://www.youtube.com/watch?v=hGb9UZ8DyDc
+- Google DeepMind: What's new with Gemini
+  https://www.youtube.com/watch?v=92LvgAcR6fI
+- Figure: Scaling Helix — Logistics
+  https://www.youtube.com/watch?v=lkc2y0yb89U
+- NVIDIA: Isaac GR00T N1
+  https://www.youtube.com/watch?v=m1CH-mgpdYg

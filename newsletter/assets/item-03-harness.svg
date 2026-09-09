@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="t3">
+  <title id="t3">Bowling-lane harness: bumpers keep an agent in the lane</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1020"/><stop offset="1" stop-color="#070A12"/>
+    </linearGradient>
+    <linearGradient id="lane" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#121a2e"/><stop offset="1" stop-color="#0E1526"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <circle cx="820" cy="-20" r="220" fill="#2FE0A2" opacity=".10"/>
+  <circle cx="80" cy="520" r="180" fill="#38C6F4" opacity=".08"/>
+  <path d="M180 80 L780 80 L860 460 L100 460 Z" fill="url(#lane)" stroke="rgba(150,168,200,.18)" stroke-width="2"/>
+  <path d="M210 90 L250 450" stroke="#2FE0A2" stroke-width="10" opacity=".55" stroke-linecap="round"/>
+  <path d="M750 90 L710 450" stroke="#2FE0A2" stroke-width="10" opacity=".55" stroke-linecap="round"/>
+  <circle cx="390" cy="200" r="28" fill="#2FE0A2"/>
+  <path d="M410 220 C480 280 560 330 640 400" fill="none" stroke="#7CF0C6" stroke-width="3" stroke-dasharray="8 8" opacity=".7"/>
+  <circle cx="640" cy="400" r="10" fill="#38C6F4"/>
+</svg>

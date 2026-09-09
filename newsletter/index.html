@@ -17,7 +17,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://theosai.net/newsletter/" />
   <meta property="og:site_name" content="Theos AI" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://theosai.net/newsletter/assets/hero-week-of-sep-8.jpg" />
+  <meta property="og:image:alt" content="Dark Theos-branded illustration for Newsletter Issue #1" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://theosai.net/newsletter/assets/hero-week-of-sep-8.jpg" />
   <meta name="twitter:title" content="Newsletter — Top 10 things in AI this week | Theos AI" />
   <meta name="twitter:description" content="A Monday page from Jed Vanden Bush: the top 10 things in AI this week, ranked for local business owners." />
 
@@ -154,6 +157,8 @@
     transition:transform .28s var(--ease), border-color .28s var(--ease);
   }
   .featured:hover{ transform:translateY(-4px); border-color:rgba(47,224,162,.4); color:inherit; }
+  .featured__media{ margin:0 0 1.15rem; border-radius:14px; overflow:hidden; border:1px solid var(--line); background:#0B1020; }
+  .featured__media img{ width:100%; height:auto; display:block; }
   .featured__kicker{ font-family:"Space Grotesk",sans-serif; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--acc); margin:0 0 .7rem; }
   .featured h2{ font-size:clamp(1.5rem, 2.6vw, 2rem); margin:0 0 .55rem; }
   .featured p{ color:var(--dim); margin:0 0 1.2rem; max-width:68ch; }
@@ -275,6 +280,9 @@
           <p class="section__sub">Issue #1 · week of September 8, 2026</p>
         </div>
         <a class="featured" href="/newsletter/2026-09-08-top-10-things-in-ai-this-week/">
+          <div class="featured__media">
+            <img src="/newsletter/assets/hero-week-of-sep-8.jpg" width="1280" height="720" alt="Dark Theos illustration: a glowing hexagon node linked to a week of AI stories." />
+          </div>
           <p class="featured__kicker">Issue #1</p>
           <h2>Top 10 things in AI this week — for a business that has real work to finish</h2>
           <p>Astra landed in ChatGPT for work. A UK building society put Copilot on meeting notes. monday.com showed how they keep a production agent in the lane. Humanoids raised Nvidia-scale money. I ranked it by what I'd care about if I ran the shop.</p>
