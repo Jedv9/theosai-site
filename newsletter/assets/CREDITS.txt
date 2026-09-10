@@ -1,0 +1,14 @@
+Issue #1 media — week of September 8, 2026
+
+Hero
+- hero-week-of-sep-8.jpg — Theos AI branded illustration (hex node)
+
+Embedded videos (official channels; youtube-nocookie, lazy-loaded, no autoplay)
+- Microsoft 365: The Microsoft 365 Copilot AI Event in Less than 3 Minutes
+  https://www.youtube.com/watch?v=hGb9UZ8DyDc
+- Google DeepMind: What's new with Gemini
+  https://www.youtube.com/watch?v=92LvgAcR6fI
+- Figure: Scaling Helix — Logistics
+  https://www.youtube.com/watch?v=lkc2y0yb89U
+- NVIDIA: Isaac GR00T N1
+  https://www.youtube.com/watch?v=m1CH-mgpdYg

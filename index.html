@@ -272,12 +272,14 @@
     .about{ grid-template-columns:1fr; gap:2.2rem; }
     .footer__inner{ grid-template-columns:1fr 1fr; }
   }
-  @media (max-width:620px){
-    body{ font-size:16px; }
+  @media (max-width:900px){
     .nav__links, .nav__actions{ display:none; }
-    .nav__toggle{ display:block; }
+    .nav__toggle{ display:block; margin-left:auto; }
     .mobile-menu{ display:flex; }
     .mobile-menu[hidden]{ display:none; }
+  }
+  @media (max-width:620px){
+    body{ font-size:16px; }
     .hero__cta .btn{ flex:1 1 auto; }
     .footer__inner{ grid-template-columns:1fr; gap:1.6rem; }
     .footer__bar{ flex-direction:column; }
@@ -304,6 +306,7 @@
         <a href="#method">Method</a>
         <a href="#why">Why Theos</a>
         <a href="#about">About</a>
+        <a href="/newsletter/">Newsletter</a>
       </nav>
 
       <div class="nav__actions">
@@ -320,6 +323,7 @@
       <a href="#method">Method</a>
       <a href="#why">Why Theos</a>
       <a href="#about">About</a>
+      <a href="/newsletter/">Newsletter</a>
       <a class="btn btn--primary btn--block js-book" href="mailto:jed@theosai.net?subject=30-minute%20call">Book a 30-Minute Call</a>
     </div>
   </header>
@@ -586,6 +590,7 @@
           <a href="#services">Services</a>
           <a href="#method">Method</a>
           <a href="#about">About</a>
+          <a href="/newsletter/">Newsletter</a>
         </nav>
         <div class="footer__col">
           <h4>Get in touch</h4>
