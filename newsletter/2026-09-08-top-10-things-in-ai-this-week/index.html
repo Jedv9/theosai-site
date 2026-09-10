@@ -256,6 +256,7 @@
   .item{
     background:linear-gradient(180deg, rgba(255,255,255,.028), rgba(255,255,255,.01));
     border:1px solid var(--line); border-radius:var(--radius); padding:1.4rem 1.4rem 1.25rem; margin:0 0 1rem;
+    scroll-margin-top:148px;
     transition:transform .22s var(--spring), border-color .22s var(--ease), box-shadow .22s var(--ease);
   }
   .item:hover{ transform:translateY(-4px); border-color:rgba(47,224,162,.38); box-shadow:0 14px 36px rgba(0,0,0,.35); }
@@ -685,6 +686,16 @@
     }
     var items = document.querySelectorAll(".item[id]");
     var links = document.querySelectorAll(".jump a");
+    links.forEach(function(a){
+      a.addEventListener("click", function(e){
+        var id = (a.getAttribute("href") || "").replace("#", "");
+        var el = document.getElementById(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (history.replaceState) history.replaceState(null, "", "#" + id);
+      });
+    });
     if (items.length && links.length && "IntersectionObserver" in window) {
       var map = {};
       links.forEach(function(a){ map[a.getAttribute("href")] = a; });
